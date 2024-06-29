@@ -58,8 +58,8 @@ Start the container containing the database (NOTE: Docker must be installed on t
 Configure Database Schema
 
 ```bash
-  npx prisma db push
   npx prisma generate
+  npx prisma db push
   npm run seed
 ```
 
