@@ -30,19 +30,19 @@ export async function login(request: FastifyRequest, reply: FastifyReply) {
   const passwordsMatch = await bcrypt.compare(password, user.password)
   if (passwordsMatch === false) return reply.status(400).send({ message: 'Invalid Credentials' })
 
-  const authorizationToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET!)
+  const authorizationToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET!, { expiresIn: '7d' })
   reply.setCookie('template_auth', authorizationToken, {
     httpOnly: true,
     secure: true,
     sameSite: 'strict',
     path: '/',
-    maxAge: 60 * 60 * 24 * 60, // 60 dias
+    maxAge: 60 * 60 * 24 * 7, // 7 dias
   })
 
-  const userToken = jwt.sign({ name: user.name, email: user.email }, process.env.JWT_SECRET!)
+  const userToken = jwt.sign({ name: user.name, email: user.email }, process.env.JWT_SECRET!, { expiresIn: '7d' })
   reply.setCookie('template_user', userToken, {
     path: '/',
-    maxAge: 60 * 60 * 24 * 60, // 60 dias
+    maxAge: 60 * 60 * 24 * 7, // 7 dias
   })
 
   return reply.status(200).send({ message: 'OK' })
