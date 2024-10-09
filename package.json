@@ -5,16 +5,18 @@
   "author": "Artur Schincariol Rossi",
   "keywords": [
     "template",
-    "node",
+    "nodejs",
     "fastify",
     "typescript"
   ],
   "type": "module",
   "scripts": {
     "dev": "tsx --env-file=.env --watch src/server.ts",
-    "build": "npx eslint . && npx prisma generate && tsup src/server.ts --format esm --out-dir build",
+    "build": "npx prisma generate && tsup src/server.ts --format esm --out-dir build",
     "start": "node --env-file=.env build/server.js",
-    "seed": "tsx --env-file=.env prisma/seed.ts"
+    "seed": "tsx --env-file=.env prisma/seed.ts",
+    "lint": "npx eslint .",
+    "test": "vitest"
   },
   "dependencies": {
     "@fastify/cookie": "^9.3.1",
@@ -42,6 +44,7 @@
     "prisma": "^5.15.1",
     "tsup": "^8.1.0",
     "tsx": "^4.15.6",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vitest": "^2.1.2"
   }
 }

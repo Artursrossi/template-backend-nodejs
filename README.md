@@ -22,11 +22,11 @@
 - Rate Limit
 - Security Headers
 - Authentication System w/ Bcrypt and JWT Token (using HTTP Only Cookies)
+- Unit Tests w/ Vitest
 
 ## TODO
 
 - SMTP server for sending emails
-- Automated Tests
 
 ## Installation
 
@@ -76,4 +76,12 @@ Production environment
 ```bash
   npm run build
   npm run start
+```
+
+## Test
+
+Run unit tests
+
+```bash
+  npm test
 ```

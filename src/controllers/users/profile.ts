@@ -19,7 +19,7 @@ export async function profile(request: FastifyRequest, reply: FastifyReply) {
   })
   if (!userData) return reply.status(400).send({ message: 'User Not Found' })
 
-  return reply.status(200).send(userData)
+  return reply.status(200).send({ user: userData })
 }
 
 export const profileResponseSchema = {
@@ -31,7 +31,9 @@ export const profileResponseSchema = {
     message: z.literal('User Not Found'),
   }),
   200: z.object({
-    email: z.string(),
-    name: z.string(),
+    user: z.object({
+      email: z.string(),
+      name: z.string(),
+    }),
   }),
 }
