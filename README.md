@@ -9,17 +9,17 @@
 
 ## Table of Contents
 
-- [ Overview](#-overview)
-- [ Features](#-features)
-- [ TODO List](#-todo-list)
-- [ Project Structure](#-project-structure)
-- [ Technologies](#-technologies)
-- [ Getting Started](#-getting-started)
-  - [ Prerequisites](#-prerequisites)
-  - [ Installation](#-installation)
-  - [ Configuration](#-configuration)
-  - [ Usage](#-usage)
-  - [ Testing](#-testing)
+- [ Overview](#overview)
+- [ Features](#features)
+- [ TODO List](#todo-list)
+- [ Project Structure](#project-structure)
+- [ Technologies](#technologies)
+- [ Getting Started](#getting-started)
+  - [ Prerequisites](#prerequisites)
+  - [ Installation](#installation)
+  - [ Configuration](#configuration)
+  - [ Usage](#usage)
+  - [ Testing](#testing)
 
 ## Overview
 
